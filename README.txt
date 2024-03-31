@@ -1,3 +1,13 @@
+Multiple open-source Ollama AI projects
+Simple GUI
+TTS-based chat system needs Prompt work
+Video camera to text-based chat system
+Everything is a work in progress.
+
+This is a side project, I am using to learn about AI, file systems, and peripheral manipulation.
+
+Made from my Ollama GUI:
+
 Title: Interactive Conversation with an Artificial Intelligence (AI) Companion using Ollama
 
 This script introduces you to an interactive conversation experience with a friendly AI companion.
@@ -30,3 +40,4 @@ Starting the Interactive Conversation: When you run this script, it automaticall
 which starts the conversation loop with your AI companion.
 Your companion will engage in a friendly dialogue based on your input while adapting to new topics as needed.
 
+I will try and keep this updated.
