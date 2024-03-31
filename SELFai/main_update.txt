@@ -1,0 +1,34 @@
+import ollama
+import os
+import SystemPrompts
+
+script = os.path.join('SELFai', 'main.py')
+
+
+def ollamaResponse(sysPrompt, user_input):
+    # Get Llama2 -- DO NOT CHANGE --
+    model = 'llama2'
+    ollama.pull(model)
+
+    # -------------------------------
+
+    # Launch Ollama Server -- DO NOT CHANGE --
+    ubuntuTerminal = 'C:\WINDOWS\system32\wsl.exe -d Ubuntu'
+    os.system(
+        ubuntuTerminal + 'bash -c "sudo apt-get update; exec bash; ollama run --gpu llama2;OLLAMA_HOST=127.0.0.1:11435 ollama serve"')
+    # ----------------------------------------
+
+    # Connect to Ollama server and ask for a response -- DO NOT CHANGE --
+    response = ollama.chat(model=model,
+                           messages=[{'role': 'system', 'content': sysPrompt}, {'role': 'user', 'content': user_input}])
+    # -------------------------------------------------------------------
+
+    # return Ollama response to function --
+    return response['message']['content']
+    # -------------------------------------
+
+
+# SYSTEM INFO
+
+
+print(ollamaResponse(SystemPrompts.systemMainPrompt, script))
